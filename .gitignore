@@ -171,7 +171,7 @@ cython_debug/
 .pypirc
 
 # Ignore all PNG files ending with _ABCD where A,B,C,D are digits
-data/**/*_[0-9][0-9][0-9][0-9].png
+data/natural_images/**/*_[0-9][0-9][0-9][0-9].png
 
 # Whitelist (un-ignore) the first five images of each class
 !data/natural_images/**/*_*0001.png
