@@ -1,2 +1,3 @@
-# MLzoomcamp_capstone_project-1
-ML zoomcamp capstone project 1
+# MLzoomcamp capstone project 1
+
+Dataset to be used: https://www.kaggle.com/datasets/prasunroy/natural-images/data
