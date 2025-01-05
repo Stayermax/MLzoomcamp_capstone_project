@@ -180,3 +180,5 @@ data/natural_images/**/*_[0-9][0-9][0-9][0-9].jpg
 !data/natural_images/**/*_*0003.jpg
 !data/natural_images/**/*_*0004.jpg
 !data/natural_images/**/*_*0005.jpg
+
+prepared_data
