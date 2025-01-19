@@ -7,7 +7,7 @@ from keras.utils import load_img
 from fastapi import FastAPI
 
 # Application
-root_path = "/image_sorter/api"
+root_path = "/image_sorting_service/api"
 app = FastAPI(
     docs_url=root_path + "/docs",
     openapi_url=root_path + "/v1/openapi.json",
