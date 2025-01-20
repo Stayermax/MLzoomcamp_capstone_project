@@ -1,4 +1,4 @@
-# MLzoomcamp capstone project 2
+# MLzoomcamp capstone project
 
 ## Project parts:
 
@@ -167,4 +167,4 @@ The service gonna be accessible from here:
 ## Cloud deployment 
 
 I deployed this service to the server of my company, so it won't be accessible from outside.
-But here is the video of how I did it and how I tested it: 
+But here is the video of how I did it and how I tested it: https://youtu.be/yBEtLkLQjak
