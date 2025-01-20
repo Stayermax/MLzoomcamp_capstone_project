@@ -21,7 +21,8 @@ If you want to reproduce the code you'll have to download the whole dataset and 
 
 ## EDA + Model training
 
-It can take up to 30 minutes to run the whole notebook, my models require some time for training.
+It can take up to 30 minutes to run the whole notebook, my models require some time for training.  
+Warning: all training scripts can take really long time if you don't have GPU.
 
 The whole EDA process fully described in the [Jupyter notebook](notebook.ipynb).
 
@@ -55,7 +56,7 @@ Hyperparameters we used:
    1. Inner layer sizes for top (dense) layers of Xception and VGG16
    2. Structure of our custom CNN
 
-Final results of the models:
+Final results of the models on validation test after fine tuning:
 
 1. Xception with fine tuning - 82.6%
 2. Custom sequential model - 85.4%
@@ -143,13 +144,13 @@ I use python 3.10
       pip3 install -r requirements.txt
 
 5. To test the installation you can either:
-   1. Run the testing script:
+   1. Run the testing script: 
    
             python3 train.py
-   
+
    2. Start prediction_service:
    
-            uvicorn prediction_service:app --reload --port 8000 --host 0.0.0.0
+            uvicorn image_sorting_service:app --reload --port 8000 --host 0.0.0.0
 
    
 ## Containerization
@@ -161,7 +162,7 @@ In order to build and run prediction service in Docker container on port 8000:
 
 The service gonna be accessible from here:
    
-      localhost:8000/credit_rating_serivce/api/docs
+      localhost:8000/image_sorting_service/api/docs
 
 ## Cloud deployment 
 

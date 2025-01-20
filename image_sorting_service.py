@@ -4,7 +4,10 @@ from tensorflow import keras
 import tensorflow.lite as tflite
 from keras.utils import load_img
 
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile
+from PIL import Image
+import io
+
 
 # Application
 root_path = "/image_sorting_service/api"
@@ -40,15 +43,24 @@ def service_health():
     return "Service is up"
 
 
+# Preprocessing function (depends on how your model was trained)
+def preprocess_image(image: Image.Image, target_size=(223, 223)) -> np.ndarray:
+    image = image.resize(target_size)
+    image = image.convert("RGB")
+    return image
+
 @app.post(root_path + '/predict_image/')
-def predict_image(parameters: dict):
+async def predict_image(file: UploadFile = File(...)):
     """
     Predicts image
     """
-    image_path = parameters['image_path']
-    image = load_img(image_path, target_size=(224, 224))
+
+    contents = await file.read()
+    image = Image.open(io.BytesIO(contents))
+    image = preprocess_image(image, target_size=(224, 224))
     res = lite_predict_image(image, class_names)
     return f"Prediction: {res}"
+
 
 
 
