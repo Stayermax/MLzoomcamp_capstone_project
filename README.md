@@ -106,11 +106,7 @@ This GET endpoint returns a string "Service is up" if service is working
 
       POST 0.0.0.0:8000/image_sorting_service/api/predict_image
 
-This POST endpoint accepts a dictionary with the following structure:
-
-    { "image_path": "path/to/image"}
-
-and predicts a class of an image ( which path on the server you passed to it).
+This POST endpoint accepts an image and predicts it's class.
 
 ## Dependency and environment management
 
@@ -166,5 +162,5 @@ The service gonna be accessible from here:
 
 ## Cloud deployment 
 
-I deployed this service to the server of my company, so it won't be accessible from outside.
+I deployed this service to the ec2 instance for testing, but I shut it down already, so it won't be accessible during peer review. 
 But here is the video of how I did it and how I tested it: https://youtu.be/yBEtLkLQjak
